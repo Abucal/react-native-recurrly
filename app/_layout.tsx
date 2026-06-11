@@ -2,6 +2,7 @@ import { Stack, SplashScreen } from "expo-router";
 import React, { useEffect } from "react";
 import { useFonts } from "expo-font";
 
+SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
 
