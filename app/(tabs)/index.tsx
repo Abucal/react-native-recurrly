@@ -18,12 +18,15 @@ import dayjs from "dayjs";
 import ListHeading from "@/components/listHeading";
 import UpcomingSubCard from "@/components/upcomingSubCard";
 import SubscriptionCard from "@/components/SubscriptionCard";
+import { useUser } from "@clerk/expo";
+
+
 
 const SafeAreaView = styled(RNSafeAreaView);
 
 export default function App() {
   const [expandedSubId, setExpandedSubId] = useState<string | null>(null);
-
+  const {user} = useUser();
   return (
     <SafeAreaView className="flex-1 bg-background p-5">
       <View className="flex-1">
@@ -33,7 +36,7 @@ export default function App() {
               <View className="home-header">
                 <View className="home-user">
                   <Image source={images.avatar} className="home-avatar" />
-                  <Text className="home-user-name">{HOME_USER.name}</Text>
+                  <Text className="home-user-name" >  {user?.primaryEmailAddress?.emailAddress}</Text>
                 </View>
                 <Image source={icons.add} className="home-add-icon" />
               </View>

@@ -425,4 +425,8 @@
     .category-chip-text-active {
         @apply text-accent;
     }
+
+    .account-body {
+        @apply flex-row gap-3;
+    }
 }
